@@ -1,7 +1,7 @@
 from odoo import api, fields, models;
 class ProductTemplate(models.Model):
     _inherit = "product.template"
-    name = fields.Char(compute="_compute_name", store=True)
+    name = fields.Char(compute="_compute_name", store=True, readonly=False)
 
     @api.depends("year", "make", "model")
     def _compute_name(self):

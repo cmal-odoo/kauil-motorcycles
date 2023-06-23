@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <xpath expr="//th[@name='th_description']" position="after">
+                    <th name="th_quantity" class="text-end">
+                        <span>Quantity</span>
+                    </th>
+                </xpath>
+                <xpath expr="//td[@name='account_invoice_line_name']" position="after">
+                    <td name="account_invoice_line_name">
+                        <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                    </td>
+                    <td class="text-end">
+                        <span t-field="o.motorcycle_registry.vin"/>
+                    </td>
+                </xpath>
+            </t>
+        </t>
+    </template>
+</data>
+</odoo>
