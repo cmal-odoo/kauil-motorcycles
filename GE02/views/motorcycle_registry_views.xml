@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="motorcycle_registry_view_list_inherit" model="ir.ui.view">
+            <field name="name">motorcycle.registry.view.list.inherit</field>
+            <field name="model">motorcycle.registry</field>
+            <field name="inherit_id" ref="motorcycle_registry.motorcycle_registry_view_list" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='current_mileage']" position="after">
+                    <!-- DEBUG THESE TMR -->
+                    <field name="lot_id" optional="hide" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
