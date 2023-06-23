@@ -7,7 +7,6 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-GEO4/
 GE02/
 .Python
 build/
