@@ -1,0 +1,100 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "v16_valor",
+            "type": "python",
+            "request": "launch",
+            "cwd": "/home/john/Odoo/versions/16.0/odoo/",
+            "python": "/home/john/Odoo/versions/16.0/venv/bin/python",
+            "program": "./odoo-bin",
+            "args": [
+                "--addons-path=addons,../enterprise,../design-themes,/home/john/Odoo/dev/clients/Valor_International",
+                "--log-handler",
+                "odoo.addons.base.models.ir_attachment:WARNING",
+                // "-u","",
+                //"",
+                "-d","v16_valor",
+                "--smtp", "localhost",
+                "--smtp-port", "1025",
+                "--limit-time-real", "0",
+                "--limit-time-cpu", "0",
+                "--dev","qweb,xml",
+                "--http-port=8069"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "v16_valor shell",
+            "type": "python",
+            "request": "launch",
+            "cwd": "/home/john/Odoo/versions/16.0/odoo/",
+            "preLaunchTask": "mailcatcher",
+            "python": "/home/john/Odoo/versions/16.0/venv/bin/python",
+            "program": "./odoo-bin",
+            "args": [
+                "shell",
+                "--addons-path=addons,../enterprise,../design-themes,/home/john/Odoo/dev/clients/Valor_International",
+                "--log-handler",
+                "odoo.addons.base.models.ir_attachment:WARNING",
+                //"-u",
+                //"",
+                "-d",
+                "v16_valor",
+                "--smtp", "localhost",
+                "--smtp-port", "1025",
+                "--limit-time-real", "0",
+                "--limit-time-cpu", "0",
+                "--dev","qweb,xml"
+
+            ],
+            "console": "externalTerminal"
+        },
+        {
+            "name": "v16_valor cloc",
+            "type": "python",
+            "request": "launch",
+            "cwd": "/home/john/Odoo/versions/16.0/odoo/",
+            "python": "/home/john/Odoo/versions/16.0/venv/bin/python",
+            "program": "./odoo-bin",
+            "args": [
+                "cloc",
+                "--addons-path=addons,../enterprise,../design-themes,/home/john/Odoo/dev/clients/Valor_International",
+                "-d",
+                "v16_valor",
+                "--limit-time-real", "0",
+                "--limit-time-cpu", "0",
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "v16_valor_empty",
+            "type": "python",
+            "request": "launch",
+            "cwd": "/home/john/Odoo/versions/16.0/odoo/",
+            "python": "/home/john/Odoo/versions/16.0/venv/bin/python",
+            "preLaunchTask": "odoo_empty",
+            "program": "./odoo-bin",
+            "args": [
+                "--addons-path=addons,../enterprise,../design-themes,/home/john/Odoo/dev/clients/Valor_International",
+                "--log-handler",
+                "odoo.addons.base.models.ir_attachment:WARNING",
+                "-i",
+                "",
+                "-d",
+                "v16_valor_empty",
+                "--test-enable",
+                //"--test-tags", ":TestClass.test_func,/test_module,external",
+                "--smtp", "localhost",
+                "--smtp-port", "1025",
+                "--limit-time-real", "0",
+                "--limit-time-cpu", "0"
+            ],
+            "console": "integratedTerminal"
+        },
+
+    ]
+}
