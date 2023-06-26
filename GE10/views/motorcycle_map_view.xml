@@ -8,7 +8,7 @@
                 <map res_partner="owner_id"/>
             </field>
         </record>
-        <record model="ir.actions.act_window" id="registry_list_action">
+        <record model="ir.actions.act_window" id="motorcycle_registry.registry_list_action">
                 <field name="name">Registry</field>
                 <field name="res_model">motorcycle.registry</field>
                 <field name="view_mode">tree,form,map</field>
