@@ -11,9 +11,10 @@
     
     "license": "OPL-1",
     
-    "depends": ["repair","GE02"],
+    "depends": ["repair","GE02", "motorcycle_registry"],
     
-    "data": [],
+    "data": ["views/motorcycle_registry_inherit_smartbutton.xml",
+             "views/repair_order_form_view_inherited.xml",],
     
     "demo": [],
     
