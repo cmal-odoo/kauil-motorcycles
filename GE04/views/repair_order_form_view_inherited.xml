@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>   
+        <record id="repair_order_form_view_inherited" model="ir.ui.view">
+            <field name="name">repair_order_form_view_inherited</field>
+            <field name="model">repair.order</field>
+            <field name="inherit_id" ref="repair.view_repair_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[2]" postion="inside">
+                    <field name="vin"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
