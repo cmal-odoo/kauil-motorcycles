@@ -1,4 +1,5 @@
 from odoo import fields,models
+from odoo.exceptions import ValidationError
 
 class MotorcycleRegistry(models.Model):
     _inherit='motorcycle.registry'
@@ -10,16 +11,18 @@ class MotorcycleRegistry(models.Model):
             action = {
                 'res_model': 'repair.order',
                 'type': 'ir.actions.act_window',
-        }
-        if len(self.repair_ids) == 1:
-            action.update({
-                'view_mode': 'form',
-                'res_id': self.repair_ids[0].id,
-            })
+            }
+            if len(self.repair_ids) == 1:
+                action.update({
+                    'view_mode': 'form',
+                    'res_id': self.repair_ids[0].id,
+                })
+            else:
+                action.update({
+                    'name': ('Repair Orders'),
+                    'view_mode': 'tree,form',
+                    'domain': [('id', 'in', self.repair_ids.ids)],
+                })
+            return action
         else:
-            action.update({
-                'name': ('Repair Orders'),
-                'view_mode': 'tree,form',
-                'domain': [('id', 'in', self.repair_ids.ids)],
-            })
-        return action
+            raise ValidationError("No repair order with this VIN")
