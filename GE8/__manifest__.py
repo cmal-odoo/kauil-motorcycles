@@ -14,7 +14,7 @@ This module is used to add the vin of a motorcycle to the invoice for the sale  
     
     "license": "OPL-1",
     
-    "depends": ["stock", "website"],
+    "depends": ["stock", "website", "account"],
     
     "data": ["views/report_invoice.xml"],
     
@@ -25,5 +25,4 @@ This module is used to add the vin of a motorcycle to the invoice for the sale  
     "website": "www.odoo.com",
     
     "application": True,
-    
 }
